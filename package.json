@@ -1,0 +1,17 @@
+{
+  "name": "chompromp",
+  "version": "0.0.0",
+  "description": "ChompRomp lets you discover awesome food, and sell it.",
+  "main": "index.html",
+  "scripts": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://cooperhilscher@bitbucket.org/cooperhilscher/chompromp.git"
+  },
+  "author": "Cooper Hilscher",
+  "license": "BSD",
+  "readmeFilename": "README.text",
+  "gitHead": "a2014cf0b3468dc7ca5f9ebdcd7a255f4a0ce5d8"
+}
