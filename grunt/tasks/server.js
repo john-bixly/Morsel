@@ -5,6 +5,7 @@ module.exports = function(grunt) {
         'jshint',
         'paths:app',
         'copy:app',
+        'sass:application',
         'setJadeFilesDev',
         'jade:compile',
         'connect:site',

@@ -23,10 +23,11 @@ define(['../.', 'jquery','views/header/view', 'views/footer/view','views/home/vi
         }
 
         function start() {
-            /*this.headerView = new HeaderView();
+            this.headerView = new HeaderView();
             this.headerView.start();
             this.footerView = new FooterView();
-            this.footerView.start();*/
+            this.footerView.start();
+            initializeApp.call(this);
         }
 
         function load(ViewType, config, bypass) {

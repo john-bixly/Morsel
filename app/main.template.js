@@ -15,7 +15,8 @@
         // <%= paths %>
     });
 
-    require([
-    ], function () {
+    require(['router'
+    ], function (Router) {
+        new Router().start;
     });
 }(require));
