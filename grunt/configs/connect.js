@@ -26,8 +26,8 @@ module.exports = function (grunt) {
                 middleware : function (connect, options) {
                     return [lrSnippet, folderMount(connect, options.base)];
                 },
-                open : {
-                    target : 'http://localhost:9001/tests/'
+                open: {
+                    target: 'http://localhost:9001/tests/'
                 }
             }
         }

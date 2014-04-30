@@ -3,10 +3,10 @@ define([
         'mocha',
         'sinon',
         'sinonChai',
-        'chomprompView/view',
+        'views/main/view',
         'sinonSpy'
     ],
-    function (chai, mocha, sinon, sinonChai, ChomprompView) {
+    function (chai, mocha, sinon, sinonChai, MainView) {
 
         'use strict';
 
@@ -15,9 +15,9 @@ define([
         chai.use(sinonChai);
         mocha.setup('bdd');
 
-        describe('chomprompView', function() {
+        describe('MainView', function() {
             it('should exist', function() {
-                should.exist(new ChomprompView());
+                should.exist(new MainView());
             });
         });
     });

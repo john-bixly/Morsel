@@ -16,8 +16,6 @@
     });
 
     require([
-        'chomprompView/view'
-    ], function (ChomprompView) {
-        new ChomprompView().start();
+    ], function () {
     });
 }(require));

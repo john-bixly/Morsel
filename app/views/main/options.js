@@ -1,8 +1,8 @@
-define(['text!chomprompView/template.html'], function (template) {
+define(['text!views/main/template.html'], function (template) {
     'use strict';
 
     return {
-        appendTo : 'body',
+        appendTo : '#stage',
         template : template,
         rivetsInstaUpdate : true,
         modelData : {

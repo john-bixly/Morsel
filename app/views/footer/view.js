@@ -1,4 +1,4 @@
-define(['masseuse', 'chomprompView/options'], function(masseuse, options) {
+define(['../.', 'views/main/options'], function(masseuse, options) {
     'use strict';
 
     return masseuse.plugins.rivets.RivetsView.extend({
