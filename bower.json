@@ -1,0 +1,13 @@
+{
+    "name": "chompromp",
+    "dependencies": {
+        "masseuse" : "2.2.1",
+        "requirejs-text": "~2.0.12"
+    },
+    "devDependencies": {
+        "mocha": "1.18.2",
+        "chai": "1.9.1",
+        "sinon": "1.7.3",
+        "sinon-chai": "2.5.0"
+    }
+}

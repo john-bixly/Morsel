@@ -1,17 +1,48 @@
 {
   "name": "chompromp",
-  "version": "0.0.0",
-  "description": "ChompRomp lets you discover awesome food, and sell it.",
-  "main": "index.html",
-  "scripts": {
-    "test": "test"
+  "description": "The best project ever.",
+  "version": "0.1.0",
+  "homepage": "",
+  "author": {
+    "name": "Cooper Hilscher",
+    "email": "cooperhilscher@gmail.com",
+    "url": "cooperhilscher.com"
   },
   "repository": {
     "type": "git",
     "url": "https://cooperhilscher@bitbucket.org/cooperhilscher/chompromp.git"
   },
-  "author": "Cooper Hilscher",
-  "license": "BSD",
-  "readmeFilename": "README.text",
-  "gitHead": "a2014cf0b3468dc7ca5f9ebdcd7a255f4a0ce5d8"
+  "bugs": {
+    "url": ""
+  },
+  "licenses": [
+    {
+      "type": "MIT",
+      "url": "/blob/master/LICENSE-MIT"
+    }
+  ],
+  "main": "lib/chompromp",
+  "engines": {
+    "node": ">= 0.8.19"
+  },
+  "scripts": {
+    "test": "grunt test"
+  },
+  "devDependencies": {
+    "grunt": "0.4.4",
+    "grunt-build-gh-pages": "1.0.3",
+    "grunt-contrib-clean": "0.5.0",
+    "grunt-contrib-connect": "0.7.1",
+    "grunt-contrib-jshint": "0.8.0",
+    "grunt-contrib-livereload": "0.1.2",
+    "grunt-contrib-requirejs": "0.4.1",
+    "grunt-contrib-watch": "0.5.3",
+    "grunt-contrib-copy": "0.5.0",
+    "grunt-requirejs-paths": "0.1.0",
+    "grunt-shell": "0.6.4",
+    "matchdep": "0.3.0",
+    "grunt-release-notes": "0.1.0",
+    "mocha-phantomjs": "3.3.1"
+  },
+  "keywords": []
 }
