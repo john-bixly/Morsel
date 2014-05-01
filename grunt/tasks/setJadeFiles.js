@@ -6,8 +6,8 @@ module.exports = function (grunt) {
 
     grunt.registerTask('setJadeFilesDev', 'Sets the Jade files dynamically', function() {
         // Get all Jade Files.
-        var files = grunt.file.expandMapping(['**/*.jade'], 'temp/', {
-            cwd : 'temp',
+        var files = grunt.file.expandMapping(['**/*.jade'], 'build/', {
+            cwd : 'app',
             rename : function (destBase, destPath) {
                 return destBase + destPath.replace(/\.jade$/, '.html');
             }

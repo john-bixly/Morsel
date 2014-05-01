@@ -1,4 +1,4 @@
-define(['../.', 'views/main/options'], function(masseuse, options) {
+define(['masseuse', 'homeView/options'], function(masseuse, options) {
     'use strict';
 
     return masseuse.plugins.rivets.RivetsView.extend({

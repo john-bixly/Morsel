@@ -1,8 +1,8 @@
-define(['text!views/header/template.html'], function (template) {
+define(['text!headerView/template.html'], function (template) {
     'use strict';
 
     return {
-        appendTo : 'body',
+        appendTo : '#header',
         template : template,
         rivetsInstaUpdate : false,
         modelData : {

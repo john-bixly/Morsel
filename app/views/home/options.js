@@ -1,8 +1,8 @@
-define(['text!views/home/template.html'], function (template) {
+define(['text!homeView/template.html'], function (template) {
     'use strict';
 
     return {
-        appendTo : 'body',
+        appendTo : '#stage',
         template : template,
         rivetsInstaUpdate : true,
         modelData : {

@@ -10,7 +10,8 @@ module.exports = function (grunt) {
                     src : [
                         '**',
                         '!paths.json',
-                        '!main.template.json'
+                        '!main.template.json',
+                        '!**/*.jade'
                     ],
                     dest : 'build/'
                 }

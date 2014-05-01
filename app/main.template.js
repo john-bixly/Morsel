@@ -17,6 +17,6 @@
 
     require(['router'
     ], function (Router) {
-        new Router().start;
+        new Router().start();
     });
 }(require));

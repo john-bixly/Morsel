@@ -1,8 +1,8 @@
-define(['text!views/footer/template.html'], function (template) {
+define(['text!footerView/template.html'], function (template) {
     'use strict';
 
     return {
-        appendTo : 'body',
+        appendTo : '#footer',
         template : template,
         rivetsInstaUpdate : true,
         modelData : {

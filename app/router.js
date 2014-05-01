@@ -1,4 +1,4 @@
-define(['../.', 'jquery','views/header/view', 'views/footer/view','views/home/view'],
+define(['masseuse', 'jquery','headerView/view', 'footerView/view','homeView/view'],
     function (masseuse, $, HeaderView, FooterView, HomeView) {
         'use strict';
         var currentView,

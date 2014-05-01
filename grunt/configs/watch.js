@@ -8,12 +8,26 @@ module.exports = function(grunt) {
                 livereload : true
             },
             files : [
-                'build/**/*.js',
-                '!build/vendor/**'
+                'app/**/*.js',
+                '!app/vendor/**'
             ],
             tasks : [
                 'jshint',
                 'copy:app'
+            ]
+        },
+        jade : {
+            options : {
+                // Start a live reload server on the default port: 35729
+                livereload : true
+            },
+            files : [
+                'app/**/*.jade',
+                '!app/vendor/**'
+            ],
+            tasks : [
+                'setJadeFilesDev',
+                'jade:compile'
             ]
         },
         tests : {
