@@ -5,13 +5,13 @@ module.exports = function(grunt) {
     grunt.config('sass',{
         application : {
             options : {
-                style : 'compressed',
+
                 require : 'sass-globbing',
                 sourcemap : true,
                 quiet : true
             },
             files : {
-                'temp/app.css' : 'app/app.scss'
+                'build/app.css' : 'app/app.scss'
             }
         },
         redo : {

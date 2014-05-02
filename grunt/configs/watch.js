@@ -30,6 +30,19 @@ module.exports = function(grunt) {
                 'jade:compile'
             ]
         },
+        sass : {
+            options : {
+                // Start a live reload server on the default port: 35729
+                livereload : true
+            },
+            files : [
+                'app/**/*.scss',
+                '!app/vendor/**'
+            ],
+            tasks : [
+                'sass:application'
+            ]
+        },
         tests : {
             options : {
                 // Start a live reload server on the default port: 35729

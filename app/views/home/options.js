@@ -6,7 +6,7 @@ define(['text!homeView/template.html'], function (template) {
         template : template,
         rivetsInstaUpdate : true,
         modelData : {
-
+            title : 'PDX ChompRomp!'
         }
     };
 });

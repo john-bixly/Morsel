@@ -1,5 +1,12 @@
 @import "vendor/foundation/scss/foundation";
+@import "variables";
+@import "colors";
+@import "views/**/*";
 
 html, body {
-  background-color: black;
+  color:$text-color;
+
+  h1,h2,h3,h4,h5,h6 {
+    color:$text-color;
+  }
 }

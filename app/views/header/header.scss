@@ -1,0 +1,28 @@
+.contain-to-grid {
+  background : $headerBG;
+  .top-bar {
+    background : $headerBG;
+    .name {
+      h1 {
+        a {
+          color:$blueGray;
+        }
+      }
+    }
+    .top-bar-section ul {
+      background : $headerBG;
+    }
+    .top-bar-section .has-form {
+      background : $headerBG;
+    }
+    .top-bar-section li.active:not(.has-form) a:not(.button) {
+      background-color:$header-active-button;
+    }
+    .top-bar-section li:not(.has-form) a:not(.button) {
+      background-color: $header-button-bg;
+    }
+    .top-bar-section ul li>a {
+      background-color: $header-button-bg;
+    }
+  }
+}
