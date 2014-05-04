@@ -13,7 +13,7 @@ module.exports = function(grunt) {
             ],
             tasks : [
                 'jshint',
-                'copy:app'
+                'copy:reload'
             ]
         },
         jade : {

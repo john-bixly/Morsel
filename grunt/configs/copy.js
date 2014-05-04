@@ -11,7 +11,28 @@ module.exports = function (grunt) {
                         '**',
                         '!paths.json',
                         '!main.template.json',
-                        '!**/*.jade'
+                        '!**/*.jade',
+                        '!**/*.css',
+                        '!**/*.scss'
+                    ],
+                    dest : 'build/'
+                }
+            ]
+        },
+        reload : {
+            files : [
+                {
+                    expand : true,
+                    cwd : 'app/',
+                    src : [
+                        '**',
+                        '!vendor/**/*',
+                        '!paths.json',
+                        '!main.template.json',
+                        '!index.html',
+                        '!**/*.jade',
+                        '!**/*.css',
+                        '!**/*.scss'
                     ],
                     dest : 'build/'
                 }
