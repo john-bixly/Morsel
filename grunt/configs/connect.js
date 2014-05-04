@@ -18,6 +18,17 @@ module.exports = function (grunt) {
                 open : true
             }
         },
+        admin : {
+            options : {
+                port : 9002,
+                hostname : 'localhost',
+                base : './admin/',
+                middleware : function (connect, options) {
+                    return [lrSnippet, folderMount(connect, options.base)];
+                },
+                open : true
+            }
+        },
         tests : {
             options : {
                 port : 9001,

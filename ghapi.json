@@ -1,0 +1,23 @@
+{
+    "crypto": {
+        "secret_passphrase" : ""
+    },
+    "db": {
+        "type": "mongodb",
+        "host": "mongodb://localhost:27017/grasshopper",
+        "database": "grasshopper",
+        "username": "",
+        "password": "",
+        "debug": false
+    },
+    "assets": {
+        "default" : "local",
+        "tmpdir" : "/home/cooper/projects/chompromp/app/temp",
+        "engines": {
+            "local" : {
+                "path" : "/home/cooper/projects/chompromp/build/assets",
+                "urlbase" : "localhost"
+            }
+        }
+    }
+}

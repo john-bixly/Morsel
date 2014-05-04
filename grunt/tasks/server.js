@@ -9,6 +9,7 @@ module.exports = function(grunt) {
         'sass:application',
         'setJadeFilesDev',
         'jade:compile',
+        'connect:admin',
         'connect:site',
         'watch'
     ]);

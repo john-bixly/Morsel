@@ -22,5 +22,8 @@
     },
     "lang" : {
         "lang" : "lang/resources"
+    },
+    "libraries" : {
+        "base64": "/vendor/requirejs-base64/base64"
     }
 }
