@@ -8,3 +8,6 @@ build
 app/main.js
 tests/main.js
 admin
+logs
+templates
+data
