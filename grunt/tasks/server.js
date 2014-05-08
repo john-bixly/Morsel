@@ -7,6 +7,7 @@ module.exports = function(grunt) {
         'paths:app',
         'copy:app',
         'sass:application',
+        'setBuildConfig',
         'setJadeFilesDev',
         'jade:compile',
         'connect:admin',

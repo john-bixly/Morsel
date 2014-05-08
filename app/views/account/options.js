@@ -1,11 +1,12 @@
-define(['text!headerView/template.html'], function (template) {
+define(['text!accountView/template.html'], function (template) {
     'use strict';
 
     return {
-        appendTo : '#header',
+        appendTo : '#stage',
         template : template,
         rivetsInstaUpdate : false,
         modelData : {
+
         }
     };
 });

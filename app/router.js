@@ -1,21 +1,24 @@
-define(['masseuse', 'jquery','headerView/view', 'footerView/view','homeView/view'],
-    function (masseuse, $, HeaderView, FooterView, HomeView) {
+define(['masseuse', 'jquery','headerView/view', 'footerView/view','homeView/view', 'accountView/view'],
+    function (masseuse, $, HeaderView, FooterView, HomeView, AccountView) {
         'use strict';
         var currentView,
             BaseView = masseuse.BaseView;
 
         return masseuse.MasseuseRouter.extend({
-            initialize: initialize,
             start: start,
             initializeApp: initializeApp,
+            loadAccount : loadAccount,
             load : load,
             routes: {
+                'account': 'loadAccount',
                 '*path': 'initializeApp'
             }
+
+
         });
 
-        function initialize() {
-
+        function loadAccount() {
+            load.call(this, AccountView, {}, true);
         }
 
         function initializeApp() {
@@ -27,7 +30,6 @@ define(['masseuse', 'jquery','headerView/view', 'footerView/view','homeView/view
             this.headerView.start();
             this.footerView = new FooterView();
             this.footerView.start();
-            initializeApp.call(this);
         }
 
         function load(ViewType, config, bypass) {

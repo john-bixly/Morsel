@@ -7,9 +7,9 @@
     },
     "views" : {
         "homeView" : "views/home",
-        "footerView":"views/footer",
-        "headerView":"views/header",
-        "mainView":"views/main"
+        "footerView":"views/templates/footer",
+        "headerView":"views/templates/header",
+        "accountView":"views/account"
     },
     "models" : {
 
