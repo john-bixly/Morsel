@@ -19,7 +19,7 @@ module.exports = function (grunt) {
                 middleware : function (connect, options) {
                     return [
                         modRewrite([
-                            '!\\.html|\\.js|\\.css|\\.png$ /index.html [L]'
+                            '!\\.jpg|\\.html|\\.js|\\.css|\\.scss|\\.png$ /index.html [L]'
                         ]),
                         require('connect-livereload')(),
                         folderMount(connect, options.base)

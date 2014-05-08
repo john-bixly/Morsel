@@ -1,4 +1,5 @@
-define(['masseuse', 'accountView/options'], function (masseuse, options) {
+define(['masseuse', 'accountView/options', 'accountView/log_in/view', 'accountView/register/view'],
+    function (masseuse, options, LoginView, RegisterView) {
     'use strict';
 
     return masseuse.plugins.rivets.RivetsView.extend({
@@ -7,7 +8,10 @@ define(['masseuse', 'accountView/options'], function (masseuse, options) {
     });
 
     function beforeRender() {
-        debugger;
+        this.addChildren([
+            new LoginView(),
+            new RegisterView()
+        ]);
     }
 
 });

@@ -3,7 +3,8 @@
   "dependencies": {
     "masseuse": "2.2.1",
     "requirejs-text": "~2.0.12",
-    "requirejs-base64": "~1.0.0"
+    "requirejs-base64": "~1.0.0",
+    "foundation-icons": "*"
   },
   "devDependencies": {
     "mocha": "1.18.2",
