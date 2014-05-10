@@ -1,5 +1,17 @@
 .row
-    .large-12.columns
+    .large-12.columns.small-centered
         h1 Log In
+        form
+            .row
+                .small-12.columns
+                    input(type='text', placeholder='User Name', data-rv-value="model:username")
+            .row
+                .small-12.columns
+                    input(type='password', placeholder='Password', data-rv-value="model:password")
+            .row
+                .small-12.columns
+                    a.button(href="#", data-rv-on-click="view.logIn") Log In
+                    span.or-register Or
+                    a.button(href="#", data-rv-on-click="view.toggleRegister") Register
 
 

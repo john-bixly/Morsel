@@ -5,7 +5,6 @@ module.exports = function(grunt) {
     grunt.config('sass',{
         application : {
             options : {
-
                 require : 'sass-globbing',
                 sourcemap : true,
                 quiet : true
