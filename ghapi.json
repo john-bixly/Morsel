@@ -12,10 +12,10 @@
     },
     "assets": {
         "default" : "local",
-        "tmpdir" : "/home/cooper/projects/chompromp/app/temp",
+        "tmpdir" : "/home/cooper/projects/Moorsl/app/temp",
         "engines": {
             "local" : {
-                "path" : "/home/cooper/projects/chompromp/build/assets",
+                "path" : "/home/cooper/projects/Moorsl/build/assets",
                 "urlbase" : "localhost"
             }
         }

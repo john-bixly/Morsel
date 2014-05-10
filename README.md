@@ -1,4 +1,4 @@
-# chompromp
+# Moorsl
 
 The best project ever.
 

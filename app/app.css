@@ -1,6 +1,6 @@
 /*
 Syntax error: File to import not found or unreadable: views/**\/*.
-              Load path: /home/cooper/projects/chompromp/app (DEPRECATED)
+              Load path: /home/cooper/projects/Moorsl/app (DEPRECATED)
         on line 2 of app.scss
 
 1: @import "vendor/foundation/scss/foundation";
@@ -52,4 +52,4 @@ app.scss:2
 body:before {
   white-space: pre;
   font-family: monospace;
-  content: "Syntax error: File to import not found or unreadable: views/**/*.\A               Load path: /home/cooper/projects/chompromp/app (DEPRECATED)\A         on line 2 of app.scss\A \A 1: @import \"vendor/foundation/scss/foundation\";\A 2: @import \"views/**/*\";\A 3: html, body {\A 4:   \A 5: }"; }
+  content: "Syntax error: File to import not found or unreadable: views/**/*.\A               Load path: /home/cooper/projects/Moorsl/app (DEPRECATED)\A         on line 2 of app.scss\A \A 1: @import \"vendor/foundation/scss/foundation\";\A 2: @import \"views/**/*\";\A 3: html, body {\A 4:   \A 5: }"; }

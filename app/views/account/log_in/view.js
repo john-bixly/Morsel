@@ -3,7 +3,6 @@ define(['masseuse', 'accountView/log_in/options'], function (masseuse, options) 
 
     return masseuse.plugins.rivets.RivetsView.extend({
         defaultOptions: options,
-        beforeRender: beforeRender,
         logIn : logIn,
         toggleRegister : toggleRegister
     });

@@ -1,4 +1,4 @@
-define(['base64']), function(base64) {
+define(['base64', 'jquery', 'constants']), function(base64, $, constants) {
     'use strict';
 
     return {
@@ -11,6 +11,6 @@ define(['base64']), function(base64) {
                     'Authorization' : 'Basic ' + base64.encode(username + ':' + password)
                 }
             });
-        },
-    }
-}
+        }
+    };
+};
