@@ -2,8 +2,9 @@
 module.exports = function (grunt) {
     'use strict';
     var path = require('path'),
-        folderMount = function folderMount (connect, paths) {
-            return connect.static(path.resolve(paths[0]));
+        proxySnippet = require('grunt-connect-proxy/lib/utils').proxyRequest,
+        folderMount = function folderMount (connect, point) {
+            return connect.static(path.resolve(point[0]));
         },
         modRewrite = require('connect-modrewrite');
 
@@ -17,13 +18,16 @@ module.exports = function (grunt) {
                     target : 'http://localhost:9001'
                 },
                 middleware : function (connect, options) {
-                    return [
-                        modRewrite([
-                            '!\\.jpg|\\.html||\\.otf|\\.eot|\\.svg|\\.ttf|\\.woff|\\.css|\\.scss|\\.png$ /index.html [L]'
-                        ]),
-                        require('connect-livereload')(),
-                        folderMount(connect, options.base)
-                    ];
+                    var middlewares;
+                    middlewares = [require('connect-livereload')()];
+                    middlewares.push(modRewrite([
+                        '!/assets|\\.html|\\.js|\\.css|\\woff|\\ttf|\\swf$ /index.html'
+                    ]));
+                    options.base.forEach(function(base) {
+                        return middlewares.push(connect["static"](base));
+                    });
+                    middlewares.push(proxySnippet);
+                    return middlewares;
                 }
             }
         },

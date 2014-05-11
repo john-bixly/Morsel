@@ -10,7 +10,10 @@ html, body {
   color:$text-color;
   background:url(assets/images/portland3.jpg);
   background-size: cover;
-
+  #stage {
+    background-color: rgba(0, 0, 0, 0.4);
+    background: rgba(0, 0, 0, 0.4);
+  }
   .button{
     background-color: $button-bg;
     &:hover, &:focus, &:hover, &:focus {

@@ -6,7 +6,7 @@ define(['text!accountView/template.html'], function (template) {
         template : template,
         rivetsInstaUpdate : false,
         modelData : {
-
+            showRegistration:false
         }
     };
 });
