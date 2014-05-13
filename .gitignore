@@ -1,0 +1,13 @@
+.idea
+.DS_Store
+desktop.ini
+*node_modules*
+*npm-debug*
+build
+.sass-cache
+app/main.js
+tests/main.js
+admin
+logs
+templates
+data

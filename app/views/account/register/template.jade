@@ -1,0 +1,22 @@
+.row
+    .small-12.small-centered.columns
+        h1 Register
+        form
+            .row
+                .small-12.columns
+                    input(type='text', placeholder='User Name', data-rv-value="model:username")
+            .row
+                .small-12.columns
+                    input(type='text', placeholder='Email', data-rv-value="model:email")
+            .row
+                .small-12.columns
+                    input(type='password', placeholder='Password', data-rv-value="model:password")
+            .row
+                .small-12.columns
+                    ul.button-group
+                        li
+                            a.button(href="#", data-rv-on-click="view.submit") Register
+                        li
+                            a.button(href="#", data-rv-on-click="view.parent.toggleRegister") Cancel
+
+

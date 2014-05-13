@@ -1,0 +1,59 @@
+{
+  "name": "Moorsl",
+  "description": "The best project ever.",
+  "version": "0.1.0",
+  "homepage": "",
+  "author": {
+    "name": "Cooper Hilscher",
+    "email": "cooperhilscher@gmail.com",
+    "url": "cooperhilscher.com"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://cooperhilscher@bitbucket.org/cooperhilscher/Moorsl.git"
+  },
+  "bugs": {
+    "url": ""
+  },
+  "licenses": [
+    {
+      "type": "MIT",
+      "url": "/blob/master/LICENSE-MIT"
+    }
+  ],
+  "main": "lib/Moorsl",
+  "engines": {
+    "node": ">= 0.8.19"
+  },
+  "scripts": {
+    "test": "grunt test"
+  },
+  "devDependencies": {
+    "grunt": "0.4.4",
+    "grunt-build-gh-pages": "1.0.3",
+    "grunt-contrib-clean": "0.5.0",
+    "grunt-contrib-connect": "0.7.1",
+    "grunt-contrib-jshint": "0.8.0",
+    "grunt-contrib-livereload": "0.1.2",
+    "grunt-contrib-requirejs": "0.4.1",
+    "grunt-contrib-watch": "0.5.3",
+    "grunt-contrib-copy": "0.5.0",
+    "grunt-requirejs-paths": "0.1.0",
+    "grunt-shell": "0.6.4",
+    "matchdep": "0.3.0",
+    "grunt-release-notes": "0.1.0",
+    "mocha-phantomjs": "3.3.1",
+    "grunt-contrib-jade": "~0.11.0",
+    "grunt-connect-proxy": "~0.1.10",
+    "grunt-contrib-sass": "~0.7.3",
+    "grunt-connect-rewrite": "~0.2.1",
+    "grunt-cordovacli": "~0.3.4",
+    "grunt-connect-pushstate": "~0.2.0",
+    "connect-modrewrite": "~0.6.4",
+    "connect-livereload": "~0.4.0"
+  },
+  "keywords": [],
+  "dependencies": {
+    "connect-modrewrite": "~0.6.4"
+  }
+}

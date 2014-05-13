@@ -1,0 +1,38 @@
+{
+    "vendor" : {
+        "jquery" : "vendor/jquery/dist/jquery",
+        "rivets" : "vendor/rivets/dist/rivets",
+        "backbone" : "vendor/backbone-amd/backbone",
+        "text" : "vendor/requirejs-text/text"
+    },
+    "views" : {
+        "homeView" : "views/home",
+        "footerView":"views/templates/footer",
+        "headerView":"views/templates/header",
+        "accountView":"views/account"
+    },
+    "models" : {
+        "userModel" : "models/userModel"
+    },
+    "application" : {
+        "router": "router"
+    },
+    "config" : {
+        "constants":"config/constants"
+    },
+    "lang" : {
+        "lang" : "lang/resources"
+    },
+    "libraries" : {
+        "base64": "vendor/requirejs-base64/base64",
+        "foundation":"vendor/foundation/js/foundation",
+        "topbar":"vendor/foundation/js/foundation/foundation.topbar",
+        "facade":"vendor/facadeFactory/jsff"
+    },
+    "helpers" : {
+        "accountHelper" : "helpers/accountHelper"
+    },
+    "utilities" : {
+        "localStorage" : "utilities/localStorage"
+    }
+}
