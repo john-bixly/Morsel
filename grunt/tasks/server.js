@@ -2,6 +2,7 @@
 module.exports = function(grunt) {
     'use strict';
     grunt.registerTask('server', [
+        'prompt:build',
         'jshint',
         'clean',
         'paths:app',

@@ -50,7 +50,8 @@
     "grunt-cordovacli": "~0.3.4",
     "grunt-connect-pushstate": "~0.2.0",
     "connect-modrewrite": "~0.6.4",
-    "connect-livereload": "~0.4.0"
+    "connect-livereload": "~0.4.0",
+    "grunt-prompt": "~1.1.0"
   },
   "keywords": [],
   "dependencies": {

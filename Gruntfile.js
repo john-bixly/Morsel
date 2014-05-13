@@ -10,7 +10,7 @@ module.exports = function (grunt) {
         pkg : grunt.file.readJSON('package.json'),
         warning : { readme : 'Compiled file. Do not edit directly. '},
         env : 'local',
-        platform : 'web'
+        platform : 'browser'
     });
 
     grunt.loadTasks('grunt/configs');
