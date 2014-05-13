@@ -11,6 +11,9 @@ module.exports = function (grunt) {
                         '**',
                         '!paths.json',
                         '!main.js',
+                        '!config.local.json',
+                        '!config.production.json',
+                        '!config.staging.json',
                         '!**/*.jade',
                         '!**/*.css',
                         '!**/*.scss'
