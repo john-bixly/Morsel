@@ -7,14 +7,15 @@ define(['masseuse', 'accountView/register/options', 'accountHelper'], function (
     });
 
     function submit(e) {
-        accountHelper.createAccount(this.model.get('username'), this.model.get('password'))
+        accountHelper.createAccount(this.model.toJSON())
             .done(_saveToken.bind(this))
             .fail(_throwError.bind(this));
         e.preventDefault();
     }
 
-    function _saveToken () {
-
+    function _saveUser (data) {
+        console.log(data);
+        debugger;
     }
 
     function _throwError (error) {

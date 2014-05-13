@@ -12,7 +12,7 @@ define(['base64', 'jquery', 'constants'], function (base64, $, constants) {
             type: 'GET',
             headers: {
                 'Authorization': 'Basic ' + base64.encode(
-                    constants.application.appUser + ':' + constants.application.appPass
+                    constants.application.user + ':' + constants.application.password
                 )
             }
         });

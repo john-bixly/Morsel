@@ -74,4 +74,5 @@ define(['masseuse', 'jquery','headerView/view', 'footerView/view','homeView/view
 
             return $deferred.promise();
         }
+
     });

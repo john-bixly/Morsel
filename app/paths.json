@@ -30,7 +30,9 @@
         "facade":"vendor/facadeFactory/jsff"
     },
     "helpers" : {
-        "accountHelper" : "helpers/accountHelper"
+        "accountHelper" : "helpers/accountHelper",
+        "applicationHelper" : "helpers/applicationHelper",
+        "memoryHelper": "helpers/memoryHelper"
     },
     "utilities" : {
         "localStorage" : "utilities/localStorage"

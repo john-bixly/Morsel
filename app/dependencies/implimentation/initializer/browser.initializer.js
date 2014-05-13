@@ -1,5 +1,6 @@
-define(['facade', 'dependencies/definition/initializer', 'router', 'underscore', 'backbone', 'jquery', 'foundation'],
-    function (Facade, initializer, Router, _, Backbone, $) {
+define(['facade', 'dependencies/definition/initializer', 'router', 'underscore', 'backbone', 'jquery',
+    'applicationHelper','memoryHelper','foundation'],
+    function (Facade, initializer, Router, _, Backbone, $, applicationHelper, memoryHelper) {
         'use strict';
         var imp = {
             initialize: initialize
@@ -8,6 +9,7 @@ define(['facade', 'dependencies/definition/initializer', 'router', 'underscore',
         return new Facade(initializer, imp);
 
         function initialize() {
+            _getApplication.call(this);
             _setupRouter.call(this);
             _setupHistory.call(this);
             _startUI.call(this);
@@ -41,6 +43,20 @@ define(['facade', 'dependencies/definition/initializer', 'router', 'underscore',
 
         function _startUI() {
             $(document).foundation();
+        }
+
+        function _getApplication() {
+            applicationHelper.getAppToken()
+                .done(_setAppToken.bind(this))
+                .fail(_throwError.bind(this));
+        }
+
+        function _setAppToken(data) {
+            memoryHelper.appData = data;
+        }
+
+        function _throwError(error) {
+            console.log(error);
         }
 
 
