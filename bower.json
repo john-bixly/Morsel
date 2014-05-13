@@ -4,7 +4,8 @@
     "masseuse": "2.2.1",
     "requirejs-text": "~2.0.12",
     "requirejs-base64": "~1.0.0",
-    "fontawesome": "~4.0.3"
+    "fontawesome": "~4.0.3",
+    "gmaps": "~0.4.12"
   },
   "devDependencies": {
     "mocha": "1.18.2",
