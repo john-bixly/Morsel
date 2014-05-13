@@ -36,6 +36,6 @@
         "localStorage" : "utilities/localStorage"
     },
     "dependencies" : {
-        "initializer" : "dependencies/implementation/initializer/<%= platform %>.initializer"
+        "initializer" : "dependencies/implimentation/initializer/<%= platform %>.initializer"
     }
 }
