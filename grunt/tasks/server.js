@@ -5,7 +5,7 @@ module.exports = function(grunt) {
         'prompt:build',
         'jshint',
         'clean',
-        'paths:app',
+        'setPaths',
         'copy:app',
         'sass:application',
         'setBuildConfig',

@@ -10,7 +10,7 @@ module.exports = function (grunt) {
                     src : [
                         '**',
                         '!paths.json',
-                        '!main.template.json',
+                        '!main.js',
                         '!**/*.jade',
                         '!**/*.css',
                         '!**/*.scss'
