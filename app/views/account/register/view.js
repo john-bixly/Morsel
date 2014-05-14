@@ -16,7 +16,7 @@ define(['baseView', 'accountView/register/options', 'accountHelper', 'underscore
 
         function _saveUser(data) {
             _.each(data, _setUserAttribute.bind(this));
-            this.app.router.navigate('home');
+            this.app.router.navigate('home', {trigger:true});
         }
 
         function _setUserAttribute(value, key) {

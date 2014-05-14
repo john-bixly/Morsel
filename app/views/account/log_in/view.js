@@ -32,7 +32,7 @@ define(['baseView', 'accountView/log_in/options', 'accountHelper', 'localStorage
 
         function _setUserModel(data) {
             _.each(data, _iterateIncomingUserData.bind(this));
-            this.app.router.navigate('home');
+            this.app.router.navigate('home', {trigger:true});
         }
 
         function _iterateIncomingUserData(value, key) {

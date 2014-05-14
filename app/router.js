@@ -1,5 +1,6 @@
-define(['masseuse', 'jquery','headerView/view', 'footerView/view','homeView/view', 'accountView/view', 'userModel'],
-    function (masseuse, $, HeaderView, FooterView, HomeView, AccountView, UserModel) {
+define(['masseuse', 'jquery','headerView/view', 'footerView/view','homeView/view', 'accountView/view', 'userModel',
+    'accountView/log_in/view', 'accountView/register/view'],
+    function (masseuse, $, HeaderView, FooterView, HomeView, AccountView, UserModel, SignInView, RegisterView) {
         'use strict';
         var currentView,
             BaseView = masseuse.BaseView,
@@ -9,10 +10,16 @@ define(['masseuse', 'jquery','headerView/view', 'footerView/view','homeView/view
             start: start,
             initializeApp: initializeApp,
             loadAccount : loadAccount,
+            loadSignIn : loadSignIn,
+            signOut : signOut,
+            loadRegister : loadRegister,
             loadHome : loadHome,
             load : load,
             routes: {
                 'account': 'loadAccount',
+                'sign-in':'loadSignIn',
+                'sign-out':'signOut',
+                'register':'loadRegister',
                 'home': 'loadHome',
                 '*path': 'initializeApp'
             }
@@ -21,6 +28,19 @@ define(['masseuse', 'jquery','headerView/view', 'footerView/view','homeView/view
 
         function loadAccount() {
             load.call(this, AccountView, {}, true);
+        }
+
+        function loadSignIn() {
+            load.call(this, SignInView, {}, true);
+        }
+
+        function signOut() {
+            BaseView.prototype.app.user.clear();
+            this.navigate('home', {trigger:true});
+        }
+
+        function loadRegister() {
+            load.call(this, RegisterView, {}, true);
         }
 
         function loadHome() {
