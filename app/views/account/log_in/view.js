@@ -1,8 +1,8 @@
-define(['masseuse', 'accountView/log_in/options', 'accountHelper', 'localStorage', 'underscore'],
-    function (masseuse, options, accountHelper, localStorage, _) {
+define(['baseView', 'accountView/log_in/options', 'accountHelper', 'localStorage', 'underscore'],
+    function (baseView, options, accountHelper, localStorage, _) {
         'use strict';
 
-        return masseuse.plugins.rivets.RivetsView.extend({
+        return baseView.extend({
             defaultOptions: options,
             logIn: logIn
         });

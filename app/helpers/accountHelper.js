@@ -1,4 +1,5 @@
-define(['base64', 'jquery', 'localStorage', 'memoryHelper', 'constants'], function (base64, $, localStorage, memoryHelper, constants) {
+define(['base64', 'jquery', 'localStorage', 'memoryHelper', 'constants'],
+    function (base64, $, localStorage, memoryHelper, constants) {
     'use strict';
 
     return {

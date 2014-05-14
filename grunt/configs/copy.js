@@ -37,6 +37,7 @@ module.exports = function (grunt) {
                         '!config/config.local.json',
                         '!config/config.production.json',
                         '!config/config.staging.json',
+                        '!config/constants.js',
                         '!**/*.jade',
                         '!**/*.css',
                         '!**/*.scss'
