@@ -1,4 +1,4 @@
-define(['text!homeView/template.html'], function (template) {
+define(['text!searchView/template.html'], function (template) {
     'use strict';
 
     return {
@@ -6,7 +6,7 @@ define(['text!homeView/template.html'], function (template) {
         template : template,
         rivetsInstaUpdate : true,
         modelData : {
-
+           
         }
     };
 });

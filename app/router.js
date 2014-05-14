@@ -1,6 +1,7 @@
 define(['masseuse', 'jquery','headerView/view', 'footerView/view','homeView/view', 'accountView/view', 'userModel',
-    'accountView/log_in/view', 'accountView/register/view'],
-    function (masseuse, $, HeaderView, FooterView, HomeView, AccountView, UserModel, SignInView, RegisterView) {
+    'accountView/log_in/view', 'accountView/register/view', 'searchView/view'],
+    function (masseuse, $, HeaderView, FooterView, HomeView, AccountView, UserModel, SignInView, RegisterView,
+              SearchView) {
         'use strict';
         var currentView,
             BaseView = masseuse.BaseView,
@@ -14,12 +15,14 @@ define(['masseuse', 'jquery','headerView/view', 'footerView/view','homeView/view
             signOut : signOut,
             loadRegister : loadRegister,
             loadHome : loadHome,
+            loadSearch : loadSearch,
             load : load,
             routes: {
                 'account': 'loadAccount',
                 'sign-in':'loadSignIn',
                 'sign-out':'signOut',
                 'register':'loadRegister',
+                'search':'loadSearch',
                 'home': 'loadHome',
                 '*path': 'initializeApp'
             }
@@ -45,6 +48,10 @@ define(['masseuse', 'jquery','headerView/view', 'footerView/view','homeView/view
 
         function loadHome() {
             load.call(this, HomeView, {}, true);
+        }
+
+        function loadSearch() {
+            load.call(this, SearchView, {}, true);
         }
 
         function initializeApp() {

@@ -10,6 +10,7 @@
         "footerView":"views/templates/footer",
         "headerView":"views/templates/header",
         "accountView":"views/account",
+        "searchView": "views/search",
         "baseView" : "views/baseView"
     },
     "models" : {
