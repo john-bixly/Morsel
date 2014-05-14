@@ -8,7 +8,7 @@
 
 html, body {
   color:$text-color;
-  background:url(assets/images/portland3.jpg);
+  background:url(assets/images/portland.jpg);
   background-size: cover;
   #stage {
     background-color: rgba(0, 0, 0, 0.4);
@@ -19,6 +19,15 @@ html, body {
     &:hover, &:focus, &:hover, &:focus {
       background-color: $button-alt-bg;
     }
+    &.alt1 {
+      background-color: $button-alt1;
+      &:hover, &:focus, &:hover, &:focus {
+        background-color: $button-alt1-bg;
+      }
+    }
+  }
+  .full-width {
+    width:100%;
   }
   h1,h2,h3,h4,h5,h6 {
     color:$text-color;
