@@ -1,24 +1,10 @@
-define(['baseView', 'accountView/options', 'accountView/log_in/view', 'accountView/register/view'],
-    function (baseView, options, LoginView, RegisterView) {
+define(['baseView', 'accountView/options'],
+    function (baseView, options) {
         'use strict';
 
         var view = baseView.extend({
-            defaultOptions: options,
-            beforeRender: beforeRender,
-            toggleRegister : toggleRegister
+            defaultOptions: options
         });
-
-        function beforeRender() {
-            this.addChildren([
-                new LoginView(),
-                new RegisterView()
-            ]);
-        }
-
-        function toggleRegister() {
-            this.model.set('showRegistration', !(this.model.get('showRegistration')));
-
-        }
 
         return view;
 

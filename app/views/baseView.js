@@ -11,7 +11,7 @@ define(['masseuse', 'velocity'], function (masseuse) {
     }
 
     function _fade() {
-        this.$el.velocity('fadeIn', { duration: 100 });
+        this.$el.velocity('fadeIn', { duration: 300 });
     }
 
 });
