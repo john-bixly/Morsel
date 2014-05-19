@@ -59,6 +59,20 @@ module.exports = function (grunt) {
                     dest : 'build/tests/'
                 }
             ]
+        },
+        cordova : {
+            files : [
+                {
+                    expand : true,
+                    cwd : 'build/',
+                    src : [
+                        '**',
+                        '!paths.json',
+                        '!main.template.json'
+                    ],
+                    dest : 'mobileBuild/www'
+                }
+            ]
         }
     });
 };
