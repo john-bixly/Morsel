@@ -32,10 +32,10 @@ module.exports = function(grunt) {
         },
         fixMobileIndex : {
             command : [
-                'grep -rl "vendor/" index.html | xargs sed -i "" "s|vendor/|/android_asset/www/vendor/"',
-                'grep -rl \'data-main="\' index.html | xargs sed -i "" \'s|data-main="|data-main="/android_asset/www/|g\' ',
-                'grep -rl \'<link rel="stylesheet" href="\' index.html | xargs sed -i "" \'s|<link rel="stylesheet" href="|<link rel="stylesheet" href="/android_asset/www/|g\' ',
-                'grep -rl "../fonts/" application.css | xargs sed -i "" "s!../fonts/!/android_asset/www/fonts/!g"'
+                'sed -i "s|/vendor/requirejs/require.js|/android_asset/www/vendor/requirejs/require.js|g" index.html',
+                'sed -i \'s|/main|/android_asset/www/main|g\' index.html',
+                'sed -i \'s|/app.css|/android_asset/www/app.css|g\' index.html',
+                'sed -i "s!../fonts/!/android_asset/www/fonts/!g" app.css'
             ].join('&&'),
             options : {
                 stdout : true,

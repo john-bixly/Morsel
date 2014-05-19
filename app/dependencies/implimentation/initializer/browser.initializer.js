@@ -1,6 +1,6 @@
 define(['facade', 'dependencies/definition/initializer', 'router', 'underscore', 'backbone', 'jquery',
-    'applicationHelper','memoryHelper','foundation'],
-    function (Facade, initializer, Router, _, Backbone, $, applicationHelper, memoryHelper) {
+    'applicationHelper','memoryHelper', 'fastclick', 'foundation'],
+    function (Facade, initializer, Router, _, Backbone, $, applicationHelper, memoryHelper, FastClick) {
         'use strict';
         var imp = {
             initialize: initialize
@@ -43,6 +43,7 @@ define(['facade', 'dependencies/definition/initializer', 'router', 'underscore',
 
         function _startUI() {
             $(document).foundation();
+            FastClick.attach(document.body);
         }
 
         function _getApplication() {

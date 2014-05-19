@@ -30,7 +30,8 @@
         "foundation":"vendor/foundation/js/foundation",
         "topbar":"vendor/foundation/js/foundation/foundation.topbar",
         "facade":"vendor/facadeFactory/jsff",
-        "velocity":"vendor/velocity/jquery.velocity"
+        "velocity":"vendor/velocity/jquery.velocity",
+        "fastclick":"vendor/fastclick/lib/fastclick"
     },
     "helpers" : {
         "accountHelper" : "helpers/accountHelper",
