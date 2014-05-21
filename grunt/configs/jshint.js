@@ -7,7 +7,9 @@ module.exports = function(grunt) {
             '!app/main.js',
             'tests/**/*.js',
             '!tests/main.js',
-            '!app/vendor/**/*.js'
+            '!app/vendor/**/*.js',
+            '!app/helpers/mapHelper.js',
+            '!app/rivets/binders/binders.js'
         ],
         options : {
             jshintrc : '.jshintrc'

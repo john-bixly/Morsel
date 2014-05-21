@@ -14,6 +14,17 @@ html, body {
     background-color: rgba(0, 0, 0, 0.4);
     background: rgba(0, 0, 0, 0.4);
   }
+  .sub-nav {
+    margin-bottom:0px;
+  }
+  .sub-nav dt.active a:hover, .sub-nav dd.active a:hover, .sub-nav li.active a:hover {
+    background:$subnavbgcolorhover;
+  }
+  .sub-nav dt.active a, .sub-nav dd.active a, .sub-nav li.active a {
+    border-radius: 0;
+    background:$subnavbgcolor;
+  }
+
   .button{
     background-color: $button-bg;
     &:hover, &:focus, &:hover, &:focus {

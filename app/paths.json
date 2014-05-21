@@ -3,7 +3,9 @@
         "jquery" : "vendor/jquery/dist/jquery",
         "rivets" : "vendor/rivets/dist/rivets",
         "backbone" : "vendor/backbone-amd/backbone",
-        "text" : "vendor/requirejs-text/text"
+        "text" : "vendor/requirejs-text/text",
+        "async": "vendor/requirejs-plugins/src/async"
+
     },
     "views" : {
         "homeView" : "views/home",
@@ -31,12 +33,15 @@
         "topbar":"vendor/foundation/js/foundation/foundation.topbar",
         "facade":"vendor/facadeFactory/jsff",
         "velocity":"vendor/velocity/jquery.velocity",
-        "fastclick":"vendor/fastclick/lib/fastclick"
+        "fastclick":"vendor/fastclick/lib/fastclick",
+        "gmaps" : "vendor/gmaps/gmaps",
+        "rivetsBinders" : "rivets/binders/binders"
     },
     "helpers" : {
         "accountHelper" : "helpers/accountHelper",
         "applicationHelper" : "helpers/applicationHelper",
-        "memoryHelper": "helpers/memoryHelper"
+        "memoryHelper": "helpers/memoryHelper",
+        "mapHelper": "helpers/mapHelper"
     },
     "utilities" : {
         "localStorage" : "utilities/localStorage"

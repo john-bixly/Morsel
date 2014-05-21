@@ -7,7 +7,8 @@
     "fontawesome": "~4.0.3",
     "gmaps": "~0.4.12",
     "velocity": "~0.0.10",
-    "fastclick": "~1.0.1"
+    "fastclick": "~1.0.1",
+    "requirejs-plugins": "~1.0.2"
   },
   "devDependencies": {
     "mocha": "1.18.2",
