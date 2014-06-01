@@ -1,13 +1,14 @@
-define(['baseView', 'searchView/options', 'mapHelper', 'jquery'],
-    function (baseView, options, mapHelper, $) {
+define(['baseView', 'searchView/options', 'mapHelper', 'listingHelper', 'jquery', 'underscore'],
+    function (baseView, options, mapHelper, listingHelper, $, _) {
         'use strict';
 
         return baseView.extend({
             defaultOptions: options,
-            beforeRender : beforeRender,
+            beforeRender: beforeRender,
             afterRender: afterRender,
-            sortBy : sortBy,
-            remove : remove
+            sortBy: sortBy,
+            remove: remove,
+            listings : null
         });
 
         function beforeRender() {
@@ -21,16 +22,25 @@ define(['baseView', 'searchView/options', 'mapHelper', 'jquery'],
         function afterRender() {
             mapHelper.createMap('map-canvas', {});
             _resizeMap.call(this);
+            listingHelper.getAllListings()
+                .done(_processListings.bind(this));
+        }
+
+        function _processListings(listings) {
+            this.listings = listings.results;
+            _.each(this.listings, _setListing.bind(this));
+        }
+
+        function _setListing(listing) {
+            mapHelper.addPin(listing.fields);
         }
 
         function _resizeMap() {
-            var w =  window.innerWidth,
-                h = window.innerHeight - 95; // Super lame.
-            mapHelper.resizeMap(h, w);
+            mapHelper.resizeMap();
         }
 
         function sortBy(e, option) {
-            switch(option) {
+            switch (option) {
                 case 'distance':
                     _sortByDistance.call(this);
                     break;
@@ -56,7 +66,7 @@ define(['baseView', 'searchView/options', 'mapHelper', 'jquery'],
         }
 
         function remove() {
-            $(window).off('resize orientationChanged',_resizeMap.bind(this));
+            $(window).off('resize orientationChanged', _resizeMap.bind(this));
             baseView.prototype.remove.apply(this, arguments);
         }
 

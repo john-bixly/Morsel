@@ -9,10 +9,10 @@ define(['facade', 'dependencies/definition/initializer', 'router', 'underscore',
         return new Facade(initializer, imp);
 
         function initialize() {
-            _getApplication.call(this);
-            _setupRouter.call(this);
-            _setupHistory.call(this);
-            _startUI.call(this);
+            _getApplication.call(this)
+                .done(_setupRouter.bind(this))
+                .done(_setupHistory.bind(this))
+                .done(_startUI.bind(this));
         }
 
         function _setupRouter() {
@@ -47,17 +47,22 @@ define(['facade', 'dependencies/definition/initializer', 'router', 'underscore',
         }
 
         function _getApplication() {
+            var $deferred = new $.Deferred();
             applicationHelper.getAppToken()
-                .done(_setAppToken.bind(this))
-                .fail(_throwError.bind(this));
+                .done(_setAppToken.bind(this, $deferred))
+                .fail(_throwError.bind(this, $deferred));
+
+            return $deferred.promise();
         }
 
-        function _setAppToken(data) {
+        function _setAppToken($deferred, data) {
             memoryHelper.appData = data;
+            $deferred.resolve();
         }
 
-        function _throwError(error) {
+        function _throwError($deferred,error) {
             console.log(error);
+            $deferred.reject();
         }
 
 

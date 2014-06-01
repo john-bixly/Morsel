@@ -41,7 +41,8 @@
         "accountHelper" : "helpers/accountHelper",
         "applicationHelper" : "helpers/applicationHelper",
         "memoryHelper": "helpers/memoryHelper",
-        "mapHelper": "helpers/mapHelper"
+        "mapHelper": "helpers/mapHelper",
+        "listingHelper": "helpers/listingHelper"
     },
     "utilities" : {
         "localStorage" : "utilities/localStorage"
