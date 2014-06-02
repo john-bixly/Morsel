@@ -13,7 +13,8 @@
         "headerView":"views/templates/header",
         "accountView":"views/account",
         "searchView": "views/search",
-        "baseView" : "views/baseView"
+        "baseView" : "views/baseView",
+        "listingView": "views/listing"
     },
     "models" : {
         "userModel" : "models/userModel"

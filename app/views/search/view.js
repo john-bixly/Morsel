@@ -62,7 +62,6 @@ define(['baseView', 'searchView/options', 'mapHelper', 'listingHelper', 'jquery'
         }
 
         function displayListing(id) {
-            console.log(id);
             this.app.router.navigate('listing/' + id, {trigger:true});
         }
 

@@ -64,7 +64,6 @@ define(['underscore', 'async!http://ecn.dev.virtualearth.net/mapcontrol/mapcontr
         }
 
         function addPin(listing,view,response) {
-            console.log(listing);
             var lat = response.parseResults[0].location.location.latitude,
                 long = response.parseResults[0].location.location.longitude,
                 location = new Microsoft.Maps.Location(lat, long),
