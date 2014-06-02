@@ -4,24 +4,20 @@ define(['baseView', 'searchView/options', 'mapHelper', 'listingHelper', 'jquery'
 
         return baseView.extend({
             defaultOptions: options,
-            beforeRender: beforeRender,
             afterRender: afterRender,
             sortBy: sortBy,
             remove: remove,
+            displayListing : displayListing,
             listings : null
         });
-
-        function beforeRender() {
-            _setupListeners.apply(this);
-        }
 
         function _setupListeners() {
             $(window).on('resize orientationChanged', _resizeMap.bind(this));
         }
 
         function afterRender() {
-            mapHelper.createMap('map-canvas', {});
-            _resizeMap.call(this);
+            mapHelper.initializeMapObjects('map-canvas', {})
+                .done(_setupListeners.bind(this));
             listingHelper.getAllListings()
                 .done(_processListings.bind(this));
         }
@@ -32,7 +28,7 @@ define(['baseView', 'searchView/options', 'mapHelper', 'listingHelper', 'jquery'
         }
 
         function _setListing(listing) {
-            mapHelper.addPin(listing.fields);
+            mapHelper.setListing(listing, this);
         }
 
         function _resizeMap() {
@@ -63,6 +59,11 @@ define(['baseView', 'searchView/options', 'mapHelper', 'listingHelper', 'jquery'
 
         function _sortByRating() {
 
+        }
+
+        function displayListing(id) {
+            console.log(id);
+            this.app.router.navigate('listing/' + id, {trigger:true});
         }
 
         function remove() {
