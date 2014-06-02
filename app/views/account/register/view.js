@@ -1,24 +1,30 @@
-define(['masseuse', 'accountView/register/options', 'accountHelper'], function (masseuse, options, accountHelper) {
-    'use strict';
+define(['baseView', 'accountView/register/options', 'accountHelper', 'underscore'],
+    function (baseView, options, accountHelper, _) {
+        'use strict';
 
-    return masseuse.plugins.rivets.RivetsView.extend({
-        defaultOptions: options,
-        submit: submit
+        return baseView.extend({
+            defaultOptions: options,
+            submit: submit
+        });
+
+        function submit(e) {
+            accountHelper.createAccount(this.model.toJSON())
+                .done(_saveUser.bind(this))
+                .fail(_throwError.bind(this));
+            e.preventDefault();
+        }
+
+        function _saveUser(data) {
+            _.each(data, _setUserAttribute.bind(this));
+            this.app.router.navigate('home', {trigger:true});
+        }
+
+        function _setUserAttribute(value, key) {
+            this.app.user.set(key, value);
+        }
+
+        function _throwError(error) {
+            console.log(error);
+        }
+
     });
-
-    function submit(e) {
-        accountHelper.createAccount(this.model.get('username'), this.model.get('password'))
-            .done(_saveToken.bind(this))
-            .fail(_throwError.bind(this));
-        e.preventDefault();
-    }
-
-    function _saveToken () {
-
-    }
-
-    function _throwError (error) {
-        console.log(error);
-    }
-
-});

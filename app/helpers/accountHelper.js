@@ -1,16 +1,17 @@
-define(['base64', 'jquery', 'localStorage'], function (base64, $, localStorage) {
+define(['base64', 'jquery', 'localStorage', 'memoryHelper', 'constants'],
+    function (base64, $, localStorage, memoryHelper, constants) {
     'use strict';
 
     return {
         getToken: getToken,
-        getUser : getUser,
-        createAccount : createAccount
+        getUser: getUser,
+        createAccount: createAccount
     };
 
     function getToken(username, password) {
         return $.ajax({
             dataType: 'json',
-            url: 'http://localhost:3000/token',
+            url: constants.account.login,
             type: 'GET',
             headers: {
                 'Authorization': 'Basic ' + base64.encode(username + ':' + password)
@@ -21,7 +22,7 @@ define(['base64', 'jquery', 'localStorage'], function (base64, $, localStorage) 
     function getUser() {
         return $.ajax({
             dataType: 'json',
-            url: 'http://localhost:3000/user',
+            url: constants.account.getUser,
             type: 'GET',
             headers: {
                 'Authorization': 'token ' + localStorage.get('authToken')
@@ -29,14 +30,20 @@ define(['base64', 'jquery', 'localStorage'], function (base64, $, localStorage) 
         });
     }
 
-    function createAccount(username, password, email) {
+    function createAccount(data) {
         return $.ajax({
             dataType: 'json',
-            url: 'http://localhost:3000/user',
-            type: 'GET',
-            data : {username : username, password : password, email:email},
+            url: constants.account.createAccount,
+            type: 'POST',
+            data: {
+                login: data.username,
+                password: data.password,
+                email: data.email,
+                firstname : data.firstName,
+                lastname : data.lastName
+            },
             headers: {
-                'Authorization': 'token ' + localStorage.get('authToken')
+                'Authorization': 'token ' + memoryHelper.appData.access_token
             }
         });
     }

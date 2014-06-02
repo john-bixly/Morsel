@@ -8,17 +8,37 @@
 
 html, body {
   color:$text-color;
-  background:url(assets/images/portland3.jpg);
+  background:url(assets/images/portland.jpg);
   background-size: cover;
   #stage {
     background-color: rgba(0, 0, 0, 0.4);
     background: rgba(0, 0, 0, 0.4);
   }
+  .sub-nav {
+    margin-bottom:0px;
+  }
+  .sub-nav dt.active a:hover, .sub-nav dd.active a:hover, .sub-nav li.active a:hover {
+    background:$subnavbgcolorhover;
+  }
+  .sub-nav dt.active a, .sub-nav dd.active a, .sub-nav li.active a {
+    border-radius: 0;
+    background:$subnavbgcolor;
+  }
+
   .button{
     background-color: $button-bg;
     &:hover, &:focus, &:hover, &:focus {
       background-color: $button-alt-bg;
     }
+    &.alt1 {
+      background-color: $button-alt1;
+      &:hover, &:focus, &:hover, &:focus {
+        background-color: $button-alt1-bg;
+      }
+    }
+  }
+  .full-width {
+    width:100%;
   }
   h1,h2,h3,h4,h5,h6 {
     color:$text-color;

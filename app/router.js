@@ -1,5 +1,7 @@
-define(['masseuse', 'jquery','headerView/view', 'footerView/view','homeView/view', 'accountView/view', 'userModel'],
-    function (masseuse, $, HeaderView, FooterView, HomeView, AccountView, UserModel) {
+define(['masseuse', 'jquery','headerView/view', 'footerView/view','homeView/view', 'accountView/view', 'userModel',
+    'accountView/log_in/view', 'accountView/register/view', 'searchView/view', 'listingView/view'],
+    function (masseuse, $, HeaderView, FooterView, HomeView, AccountView, UserModel, SignInView, RegisterView,
+              SearchView, ListingView) {
         'use strict';
         var currentView,
             BaseView = masseuse.BaseView,
@@ -9,11 +11,21 @@ define(['masseuse', 'jquery','headerView/view', 'footerView/view','homeView/view
             start: start,
             initializeApp: initializeApp,
             loadAccount : loadAccount,
+            loadSignIn : loadSignIn,
+            signOut : signOut,
+            loadRegister : loadRegister,
             loadHome : loadHome,
+            loadListing : loadListing,
+            loadSearch : loadSearch,
             load : load,
             routes: {
                 'account': 'loadAccount',
+                'sign-in':'loadSignIn',
+                'sign-out':'signOut',
+                'register':'loadRegister',
+                'search':'loadSearch',
                 'home': 'loadHome',
+                'listing/:id' : 'loadListing',
                 '*path': 'initializeApp'
             }
 
@@ -23,8 +35,29 @@ define(['masseuse', 'jquery','headerView/view', 'footerView/view','homeView/view
             load.call(this, AccountView, {}, true);
         }
 
+        function loadSignIn() {
+            load.call(this, SignInView, {}, true);
+        }
+
+        function signOut() {
+            BaseView.prototype.app.user.clear();
+            this.navigate('home', {trigger:true});
+        }
+
+        function loadRegister() {
+            load.call(this, RegisterView, {}, true);
+        }
+
         function loadHome() {
             load.call(this, HomeView, {}, true);
+        }
+
+        function loadListing(listingId) {
+            load.call(this, ListingView, {modelData : {listingId : listingId}}, true);
+        }
+
+        function loadSearch() {
+            load.call(this, SearchView, {}, true);
         }
 
         function initializeApp() {
@@ -74,4 +107,5 @@ define(['masseuse', 'jquery','headerView/view', 'footerView/view','homeView/view
 
             return $deferred.promise();
         }
+
     });

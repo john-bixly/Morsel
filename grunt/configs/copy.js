@@ -10,7 +10,10 @@ module.exports = function (grunt) {
                     src : [
                         '**',
                         '!paths.json',
-                        '!main.template.json',
+                        '!main.js',
+                        '!config/config.local.json',
+                        '!config/config.production.json',
+                        '!config/config.staging.json',
                         '!**/*.jade',
                         '!**/*.css',
                         '!**/*.scss'
@@ -28,8 +31,13 @@ module.exports = function (grunt) {
                         '**',
                         '!vendor/**/*',
                         '!paths.json',
-                        '!main.template.json',
+                        '!dependencies/**/*',
+                        '!main.js',
                         '!index.html',
+                        '!config/config.local.json',
+                        '!config/config.production.json',
+                        '!config/config.staging.json',
+                        '!config/constants.js',
                         '!**/*.jade',
                         '!**/*.css',
                         '!**/*.scss'
@@ -49,6 +57,20 @@ module.exports = function (grunt) {
                         '!main.template.json'
                     ],
                     dest : 'build/tests/'
+                }
+            ]
+        },
+        cordova : {
+            files : [
+                {
+                    expand : true,
+                    cwd : 'build/',
+                    src : [
+                        '**',
+                        '!paths.json',
+                        '!main.template.json'
+                    ],
+                    dest : 'mobileBuild/www'
                 }
             ]
         }

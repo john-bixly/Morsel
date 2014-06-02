@@ -3,13 +3,18 @@
         "jquery" : "vendor/jquery/dist/jquery",
         "rivets" : "vendor/rivets/dist/rivets",
         "backbone" : "vendor/backbone-amd/backbone",
-        "text" : "vendor/requirejs-text/text"
+        "text" : "vendor/requirejs-text/text",
+        "async": "vendor/requirejs-plugins/src/async"
+
     },
     "views" : {
         "homeView" : "views/home",
         "footerView":"views/templates/footer",
         "headerView":"views/templates/header",
-        "accountView":"views/account"
+        "accountView":"views/account",
+        "searchView": "views/search",
+        "baseView" : "views/baseView",
+        "listingView": "views/listing"
     },
     "models" : {
         "userModel" : "models/userModel"
@@ -27,12 +32,23 @@
         "base64": "vendor/requirejs-base64/base64",
         "foundation":"vendor/foundation/js/foundation",
         "topbar":"vendor/foundation/js/foundation/foundation.topbar",
-        "facade":"vendor/facadeFactory/jsff"
+        "facade":"vendor/facadeFactory/jsff",
+        "velocity":"vendor/velocity/jquery.velocity",
+        "fastclick":"vendor/fastclick/lib/fastclick",
+        "gmaps" : "vendor/gmaps/gmaps",
+        "rivetsBinders" : "rivets/binders/binders"
     },
     "helpers" : {
-        "accountHelper" : "helpers/accountHelper"
+        "accountHelper" : "helpers/accountHelper",
+        "applicationHelper" : "helpers/applicationHelper",
+        "memoryHelper": "helpers/memoryHelper",
+        "mapHelper": "helpers/mapHelper",
+        "listingHelper": "helpers/listingHelper"
     },
     "utilities" : {
         "localStorage" : "utilities/localStorage"
+    },
+    "dependencies" : {
+        "initializer" : "dependencies/implimentation/initializer/<%= platform %>.initializer"
     }
 }
