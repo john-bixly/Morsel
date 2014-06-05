@@ -1,5 +1,6 @@
-define(['baseView', 'searchView/options', 'mapHelper', 'listingHelper', 'jquery', 'underscore'],
-    function (baseView, options, mapHelper, listingHelper, $, _) {
+define(['baseView', 'searchView/options', 'mapHelper', 'listingHelper', 'jquery', 'underscore',
+    'listingCollection'],
+    function (baseView, options, mapHelper, listingHelper, $, _, ListingCollection) {
         'use strict';
 
         return baseView.extend({
@@ -23,8 +24,12 @@ define(['baseView', 'searchView/options', 'mapHelper', 'listingHelper', 'jquery'
         }
 
         function _processListings(listings) {
-            this.listings = listings.results;
-            _.each(this.listings, _setListing.bind(this));
+            this.listings = new ListingCollection(listings.results);
+            _setListings.call(this);
+        }
+
+        function _setListings() {
+            _.each(this.listings.models, _setListing.bind(this));
         }
 
         function _setListing(listing) {

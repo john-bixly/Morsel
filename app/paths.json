@@ -17,7 +17,11 @@
         "listingView": "views/listing"
     },
     "models" : {
-        "userModel" : "models/userModel"
+        "userModel" : "models/userModel",
+        "listingModel" : "models/listingModel"
+    },
+    "collections" : {
+        "listingCollection" : "collections/listingCollection"
     },
     "application" : {
         "router": "router"

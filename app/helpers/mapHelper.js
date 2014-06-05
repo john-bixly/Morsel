@@ -26,16 +26,15 @@ define(['underscore', 'async!http://ecn.dev.virtualearth.net/mapcontrol/mapcontr
         };
 
         function initializeMapObjects(div, options) {
-            var $deferred = new $.Deferred();
-            Microsoft.Maps.loadModule('Microsoft.Maps.Overlays.Style', { callback: createMap.bind(this, div, options, $deferred) });
-            Microsoft.Maps.loadModule('Microsoft.Maps.Search', { callback: createSearchManager.bind(this) });
-            return $deferred.promise();
+            this.$Initdeferred = new $.Deferred();
+            Microsoft.Maps.loadModule('Microsoft.Maps.Overlays.Style', { callback: createMap.bind(this, div, options) });
+            return this.$Initdeferred.promise();
         }
 
-        function createMap(div, options, $deferred) {
+        function createMap(div, options) {
             this.map = new Microsoft.Maps.Map(document.getElementById(div), _.extend(options, this.defaultOptions));
+            Microsoft.Maps.loadModule('Microsoft.Maps.Search', { callback: createSearchManager.bind(this) });
             _.defer(resizeMap.bind(this));
-            $deferred.resolve();
         }
 
         function resizeMap(height, width) {
@@ -56,7 +55,7 @@ define(['underscore', 'async!http://ecn.dev.virtualearth.net/mapcontrol/mapcontr
 
         function searchForAddress(listing, view) {
             this.searchManager.search({
-                query : listing.fields.location,
+                query : listing.get('location'),
                 count : 1,
                 callback : addPin.bind(this, listing, view),
                 errorCallback : searchError.bind(this)
@@ -71,14 +70,14 @@ define(['underscore', 'async!http://ecn.dev.virtualearth.net/mapcontrol/mapcontr
                 pinInfobox = new Microsoft.Maps.Infobox(
                     pin.getLocation(),
                     {
-                        title: listing.fields.cuisinetitle,
+                        title: listing.get('cuisinetitle'),
                         titleClickHandler : view.displayListing.bind(view, listing._id),
-                        description: listing.fields.description,
+                        description: listing.get('description'),
                         visible: false,
                         offset: new Microsoft.Maps.Point(0,15)
                     });
 
-            Microsoft.Maps.Events.addHandler(pin, 'click', displayInfobox.bind(this, pinInfobox));
+            Microsoft.Maps.Events.addHandler(pin, 'click', displayInfobox.bind(this, pinInfobox, pin));
             Microsoft.Maps.Events.addHandler(this.map, 'viewchange', hideInfobox.bind(this, pinInfobox));
 
             this.map.entities.push(pin);
@@ -86,9 +85,10 @@ define(['underscore', 'async!http://ecn.dev.virtualearth.net/mapcontrol/mapcontr
 
         }
 
-        function displayInfobox(pinInfobox, e)
+        function displayInfobox(pinInfobox, pin)
         {
-            pinInfobox.setOptions({ visible:true });
+            this.map.setView({center : pin.getLocation(), zoom:16});
+            _.delay(function(){pinInfobox.setOptions({ visible:true })}, 500);
         }
 
         function hideInfobox(pinInfobox,e)
@@ -104,6 +104,7 @@ define(['underscore', 'async!http://ecn.dev.virtualearth.net/mapcontrol/mapcontr
             if (!this.searchManager) {
                 this.map.addComponent('searchManager', new Microsoft.Maps.Search.SearchManager(this.map));
                 this.searchManager = this.map.getComponent('searchManager');
+                this.$Initdeferred.resolve();
             }
         }
 
