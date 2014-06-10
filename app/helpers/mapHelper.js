@@ -1,5 +1,5 @@
-define(['underscore', 'async!http://ecn.dev.virtualearth.net/mapcontrol/mapcontrol.ashx?v=7.0!onscriptload'],
-    function (_) {
+define(['underscore', 'location','async!http://ecn.dev.virtualearth.net/mapcontrol/mapcontrol.ashx?v=7.0!onscriptload'],
+    function (_, location) {
         'use strict';
         return {
             defaultOptions: {
@@ -18,8 +18,11 @@ define(['underscore', 'async!http://ecn.dev.virtualearth.net/mapcontrol/mapcontr
             locations: null,
             map: null,
             searchManager: null,
+            userLocation: null,
             initializeMapObjects: initializeMapObjects,
             createMap : createMap,
+            getUserLocation : getUserLocation,
+            addUserLocation : addUserLocation,
             resizeMap: resizeMap,
             setListing : setListing,
             searchForAddress : searchForAddress
@@ -35,6 +38,19 @@ define(['underscore', 'async!http://ecn.dev.virtualearth.net/mapcontrol/mapcontr
             this.map = new Microsoft.Maps.Map(document.getElementById(div), _.extend(options, this.defaultOptions));
             Microsoft.Maps.loadModule('Microsoft.Maps.Search', { callback: createSearchManager.bind(this) });
             _.defer(resizeMap.bind(this));
+        }
+
+        function getUserLocation() {
+            var $deferred = $.Deferred();
+            location.getUserLocation(this, $deferred);
+            return $deferred.promise();
+        }
+
+        function addUserLocation() {
+            var userLocation = new Microsoft.Maps.Location(this.userLocation.lat, this.userLocation.lng),
+                pin = new Microsoft.Maps.Pushpin(userLocation, {});
+            this.map.entities.push(pin);
+            this.map.setView({center :userLocation, zoom:14});
         }
 
         function resizeMap(height, width) {

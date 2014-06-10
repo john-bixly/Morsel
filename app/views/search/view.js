@@ -18,9 +18,19 @@ define(['baseView', 'searchView/options', 'mapHelper', 'listingHelper', 'jquery'
 
         function afterRender() {
             mapHelper.initializeMapObjects('map-canvas', {})
-                .done(_setupListeners.bind(this));
+                .done(_setupListeners.bind(this))
+                .done(_getListings.bind(this))
+                .done(_getUserLocation.bind(this));
+
+        }
+        function _getListings() {
             listingHelper.getAllListings()
                 .done(_processListings.bind(this));
+        }
+
+        function _getUserLocation() {
+            mapHelper.getUserLocation()
+                .done(mapHelper.addUserLocation.bind(mapHelper));
         }
 
         function _processListings(listings) {

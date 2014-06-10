@@ -5,7 +5,7 @@ module.exports = function (grunt) {
             options: {
                 command: ['create'],
                 platforms: ['android'],
-                plugins: ['device', 'dialogs'],
+                plugins: ['device', 'dialogs', 'geolocation'],
                 path: 'mobileBuild',
                 id: 'io.moorsl.moorsl',
                 name: 'Moorsl'
@@ -15,7 +15,7 @@ module.exports = function (grunt) {
             options: {
                 command: ['platform', 'plugin', 'build'],
                 platforms: ['android'],
-                plugins: ['device', 'dialogs'],
+                plugins: ['device', 'dialogs', 'geolocation'],
                 path: 'mobileBuild',
                 id: 'io.moorsl.moorsl',
                 name: 'Moorsl'
@@ -25,7 +25,7 @@ module.exports = function (grunt) {
             options: {
                 command: 'run',
                 platforms: ['android'],
-                plugins: ['device', 'dialogs'],
+                plugins: ['device', 'dialogs','geolocation'],
                 path: 'mobileBuild',
                 id: 'io.moorsl.moorsl',
                 name: 'Moorsl'
