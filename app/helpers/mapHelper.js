@@ -1,4 +1,4 @@
-define(['underscore', 'location','async!http://ecn.dev.virtualearth.net/mapcontrol/mapcontrol.ashx?v=7.0!onscriptload'],
+define(['underscore', 'location', 'async!http://ecn.dev.virtualearth.net/mapcontrol/mapcontrol.ashx?v=7.0!onscriptload'],
     function (_, location) {
         'use strict';
         return {
@@ -20,12 +20,12 @@ define(['underscore', 'location','async!http://ecn.dev.virtualearth.net/mapcontr
             searchManager: null,
             userLocation: null,
             initializeMapObjects: initializeMapObjects,
-            createMap : createMap,
-            getUserLocation : getUserLocation,
-            addUserLocation : addUserLocation,
+            createMap: createMap,
+            getUserLocation: getUserLocation,
+            addUserLocation: addUserLocation,
             resizeMap: resizeMap,
-            setListing : setListing,
-            searchForAddress : searchForAddress
+            setListing: setListing,
+            searchForAddress: searchForAddress
         };
 
         function initializeMapObjects(div, options) {
@@ -50,7 +50,7 @@ define(['underscore', 'location','async!http://ecn.dev.virtualearth.net/mapcontr
             var userLocation = new Microsoft.Maps.Location(this.userLocation.lat, this.userLocation.lng),
                 pin = new Microsoft.Maps.Pushpin(userLocation, {});
             this.map.entities.push(pin);
-            this.map.setView({center :userLocation, zoom:14});
+            this.map.setView({center: userLocation, zoom: 14});
         }
 
         function resizeMap(height, width) {
@@ -71,14 +71,14 @@ define(['underscore', 'location','async!http://ecn.dev.virtualearth.net/mapcontr
 
         function searchForAddress(listing, view) {
             this.searchManager.search({
-                query : listing.get('location'),
-                count : 1,
-                callback : addPin.bind(this, listing, view),
-                errorCallback : searchError.bind(this)
+                query: listing.get('location'),
+                count: 1,
+                callback: addPin.bind(this, listing, view),
+                errorCallback: searchError.bind(this)
             });
         }
 
-        function addPin(listing,view,response) {
+        function addPin(listing, view, response) {
             var lat = response.parseResults[0].location.location.latitude,
                 long = response.parseResults[0].location.location.longitude,
                 location = new Microsoft.Maps.Location(lat, long),
@@ -87,10 +87,10 @@ define(['underscore', 'location','async!http://ecn.dev.virtualearth.net/mapcontr
                     pin.getLocation(),
                     {
                         title: listing.get('cuisinetitle'),
-                        titleClickHandler : view.displayListing.bind(view, listing._id),
+                        titleClickHandler: view.displayListing.bind(view, listing._id),
                         description: listing.get('description'),
                         visible: false,
-                        offset: new Microsoft.Maps.Point(0,15)
+                        offset: new Microsoft.Maps.Point(0, 15)
                     });
 
             Microsoft.Maps.Events.addHandler(pin, 'click', displayInfobox.bind(this, pinInfobox, pin));
@@ -101,14 +101,14 @@ define(['underscore', 'location','async!http://ecn.dev.virtualearth.net/mapcontr
 
         }
 
-        function displayInfobox(pinInfobox, pin)
-        {
-            this.map.setView({center : pin.getLocation(), zoom:16});
-            _.delay(function(){pinInfobox.setOptions({ visible:true })}, 500);
+        function displayInfobox(pinInfobox, pin) {
+            this.map.setView({center: pin.getLocation(), zoom: 16});
+            _.delay(function () {
+                pinInfobox.setOptions({ visible: true })
+            }, 500);
         }
 
-        function hideInfobox(pinInfobox,e)
-        {
+        function hideInfobox(pinInfobox, e) {
             pinInfobox.setOptions({ visible: false });
         }
 

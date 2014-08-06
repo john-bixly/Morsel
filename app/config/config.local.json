@@ -1,6 +1,6 @@
 {
     "baseUrl": "http://localhost:9001",
-    "apiUrl": "http://localhost:3000",
+    "apiUrl": "http://morsel-backend.herokuapp.com",
     "appUser" : "admin",
     "appPass" : "TestPassword"
 }

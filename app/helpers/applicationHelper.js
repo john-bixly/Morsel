@@ -8,7 +8,7 @@ define(['base64', 'jquery', 'constants'], function (base64, $, constants) {
     function getAppToken() {
         return $.ajax({
             dataType: 'json',
-            url: 'http://localhost:3000/token',
+            url: constants.account.login,
             type: 'GET',
             headers: {
                 'Authorization': 'Basic ' + base64.encode(

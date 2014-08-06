@@ -8,21 +8,21 @@ define(['baseView', 'searchView/options', 'mapHelper', 'listingHelper', 'jquery'
             afterRender: afterRender,
             sortBy: sortBy,
             remove: remove,
-            displayListing : displayListing,
-            listings : null
+            displayListing: displayListing,
+            listings: null
         });
-
-        function _setupListeners() {
-            $(window).on('resize orientationChanged', _resizeMap.bind(this));
-        }
 
         function afterRender() {
             mapHelper.initializeMapObjects('map-canvas', {})
                 .done(_setupListeners.bind(this))
                 .done(_getListings.bind(this))
                 .done(_getUserLocation.bind(this));
-
         }
+
+        function _setupListeners() {
+            $(window).on('resize orientationChanged', _resizeMap.bind(this));
+        }
+
         function _getListings() {
             listingHelper.getAllListings()
                 .done(_processListings.bind(this));
@@ -77,7 +77,8 @@ define(['baseView', 'searchView/options', 'mapHelper', 'listingHelper', 'jquery'
         }
 
         function displayListing(id) {
-            this.app.router.navigate('listing/' + id, {trigger:true});
+            debugger;
+            this.app.router.navigate('listing/' + id, {trigger: true});
         }
 
         function remove() {

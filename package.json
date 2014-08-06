@@ -50,11 +50,13 @@
     "grunt-cordovacli": "~0.4.0",
     "grunt-connect-pushstate": "~0.2.0",
     "connect-modrewrite": "~0.6.4",
+    "connect-modrewrite": "~0.6.4",
     "connect-livereload": "~0.4.0",
     "grunt-prompt": "~1.1.0"
   },
   "keywords": [],
   "dependencies": {
-    "connect-modrewrite": "~0.6.4"
+    "grasshopper-api": "~0.14.28",
+    "grasshopper-admin": "~0.26.10"
   }
 }

@@ -11,7 +11,6 @@ module.exports = function(grunt) {
         'setBuildConfig',
         'setJadeFilesDev',
         'jade:compile',
-        'connect:admin',
         'connect:site',
         'watch'
     ]);
