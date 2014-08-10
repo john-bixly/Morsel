@@ -34,9 +34,11 @@ define(['underscore', './loadRivets', './binders', './formatters', './adapters']
             rivetsOptions.rivetsBinders =
                 [{}, defaultBinders].concat(
                     rivetsOptions.binders || options.rivetsBinders || options.rivetBinders);
-            if (undefined === rivetsOptions.rivetsInstaUpdate) {
+
+            if (undefined !== rivetsOptions.rivetsInstaUpdate && undefined === rivetsOptions.instaUpdate) {
                 rivetsOptions.instaUpdate = options.rivetsInstaUpdate;
             }
+
             rivetsOptions.rivetsDelimiters =
                 rivetsOptions.delimiters || options.rivetsDelimiters || options.rivetDelimiters;
             rivetsOptions.rivetsPrefix =
@@ -62,8 +64,15 @@ define(['underscore', './loadRivets', './binders', './formatters', './adapters']
                 if (rivetedViews) {
                     _.each(rivetedViews, function(view) {
                         view.unbind();
+                        _.each(view.bindings, function (binding) {
+                            delete binding.el;
+                        });
+                        delete view.bindings;
+                        delete view.els;
+                        delete view.models;
                     });
                 }
+                rivetedViews = undefined;
             });
         }
     });

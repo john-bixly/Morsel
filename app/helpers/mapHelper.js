@@ -87,7 +87,7 @@ define(['underscore', 'location', 'async!http://ecn.dev.virtualearth.net/mapcont
                     pin.getLocation(),
                     {
                         title: listing.get('cuisinetitle'),
-                        titleClickHandler: view.displayListing.bind(view, listing._id),
+                        titleClickHandler: view.displayListing.bind(view, listing.get('_id')),
                         description: listing.get('description'),
                         visible: false,
                         offset: new Microsoft.Maps.Point(0, 15)
