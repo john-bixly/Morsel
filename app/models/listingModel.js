@@ -1,19 +1,26 @@
 define([
-    'masseuse', 'underscore'
-], function (masseuse, _) {
+    'masseuse', 'underscore', 'constants', 'baseModel'
+], function (masseuse, _, constants, baseModel) {
 
     'use strict';
     var ComputedProperty = masseuse.ComputedProperty;
 
-    return masseuse.MasseuseModel.extend({
-        defaults : {
-            setFields : new ComputedProperty(['fields', 'meta'], setAttributesOnSelf),
-            fields : '',
-            meta : ''
+    return baseModel.extend({
+        idAttribute: '_id',
+        defaults: {
+            setFields: new ComputedProperty(['fields', 'meta'], setAttributesOnSelf),
+            listingImage : new ComputedProperty(['image'], function(image){
+                return constants.assets.assetBase + image;
+            })
         },
-
-        setAttributesOnSelf : setAttributesOnSelf
+        url: url,
+        urlRoot: url,
+        setAttributesOnSelf: setAttributesOnSelf
     });
+
+    function url () {
+        return constants.content.content + '/' + this.get('_id');
+    }
 
     function setAttributesOnSelf(attrs) {
         var self = this;

@@ -17,6 +17,7 @@
         "listingView": "views/listing"
     },
     "models" : {
+        "baseModel" : "models/baseModel",
         "userModel" : "models/userModel",
         "listingModel" : "models/listingModel"
     },
@@ -31,6 +32,9 @@
     },
     "lang" : {
         "lang" : "lang/resources"
+    },
+    "formatters" : {
+        "formatters" : "rivets/formatters/formatters"
     },
     "libraries" : {
         "base64": "vendor/requirejs-base64/base64",

@@ -53,7 +53,7 @@ define(['masseuse', 'jquery','headerView/view', 'footerView/view','homeView/view
         }
 
         function loadListing(listingId) {
-            load.call(this, ListingView, {modelData : {listingId : listingId}}, true);
+            load.call(this, ListingView, {modelData : {_id : listingId}}, true);
         }
 
         function loadSearch() {

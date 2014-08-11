@@ -14,6 +14,9 @@ define({
         content : '<%= apiUrl%>/content',
         contentTypes : '<%= apiUrl%>/contenttypes',
         node : '<%= apiUrl%>/node/'
+    },
+    assets : {
+        assetBase : 'https://s3-us-west-1.amazonaws.com/morselapp/'
     }
 
 

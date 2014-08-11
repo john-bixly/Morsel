@@ -1,4 +1,4 @@
-define(['baseView', 'listingView/options', 'listingHelper'], function (baseView, options, listingHelper) {
+define(['baseView', 'listingView/options'], function (baseView, options) {
     'use strict';
 
     return baseView.extend({
@@ -6,15 +6,9 @@ define(['baseView', 'listingView/options', 'listingHelper'], function (baseView,
         beforeRender: beforeRender
     });
 
-    function beforeRender() {
-        debugger;
-        listingHelper.getListing(this.model.get('listingId'))
-            .done(function(data){
-                console.log(data);
-            })
-            .fail(function(err){
-                console.log(err);
-            });
+    function beforeRender($deferred) {
+        this.model.fetch()
+            .always($deferred.resolve);
     }
 
 });
