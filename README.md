@@ -3,8 +3,8 @@
 ## Getting Started
 
 #### This project is built with :
-    * [masseuse](http://solid-interactive.github.io/masseuse/docs/index.html) - A view helper built on top of [backbone.js](http://backbonejs.org/)
-    * [Grasshopper Admin / Api](http://grasshopper.ws) For the backend.
+    1.[masseuse](http://solid-interactive.github.io/masseuse/docs/index.html) - A view helper built on top of [backbone.js](http://backbonejs.org/)
+    1.[Grasshopper Admin / Api](http://grasshopper.ws) For the backend.
 
 #### Locations :
 [Admin](http://morsel-backend.herokuapp.com/admin)
