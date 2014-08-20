@@ -7,8 +7,8 @@
 1. [Grasshopper Admin / Api](http://grasshopper.ws) For the backend.
 
 #### Locations :
-[Admin](http://morsel-backend.herokuapp.com/admin)
-[API Endpoint](http://morsel-backend.herokuapp.com)
+1. [Admin](http://morsel-backend.herokuapp.com/admin)
+1. [API Endpoint](http://morsel-backend.herokuapp.com)
 
 
 #### Install bower components, npm dependencies, and gems using:
