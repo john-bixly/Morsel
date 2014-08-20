@@ -1,13 +1,43 @@
 # Morsel
 
-The best project ever.
-
 ## Getting Started
-Install bower and npm dependencies using:
+
+#### This project is built with :
+    * [masseuse](http://solid-interactive.github.io/masseuse/docs/index.html) - A view helper built on top of [backbone.js](http://backbonejs.org/)
+    * [Grasshopper Admin / Api](http://grasshopper.ws) For the backend.
+
+#### Locations :
+[Admin](http://morsel-backend.herokuapp.com/admin)
+[API Endpoint](http://morsel-backend.herokuapp.com)
+
+
+#### Install bower components, npm dependencies, and gems using:
 
 ```shell
-bower install && npm install
+bower install && npm install && bundle install
 ```
+
+#### Run a local server pointed at the external backend :
+
+```shell
+grunt server
+```
+
+Select local, and browser
+
+#### For an android build
+
+```shell
+grunt android
+```
+
+(plug your android device in before)
+
+#### app/dependencies
+
+Here we will differentiate between browser and mobile, it chooses the correct one depending on your build.
+
+
 
 Update your release notes using:
 
