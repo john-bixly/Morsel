@@ -30,7 +30,7 @@ define(['underscore', 'location', 'async!http://ecn.dev.virtualearth.net/mapcont
 
         function initializeMapObjects(div, options) {
             this.$Initdeferred = new $.Deferred();
-            Microsoft.Maps.loadModule('Microsoft.Maps.Overlays.Style', { callback: createMap.bind(this, div, options) });
+            Microsoft.Maps.loadModule('Microsoft.Maps.Themes.BingTheme', { callback: createMap.bind(this, div, options) });
             return this.$Initdeferred.promise();
         }
 
@@ -90,6 +90,7 @@ define(['underscore', 'location', 'async!http://ecn.dev.virtualearth.net/mapcont
                         titleClickHandler: view.displayListing.bind(view, listing.get('_id')),
                         description: listing.get('description'),
                         visible: false,
+                        htmlContent:'<b>Custom HTML</b>',
                         offset: new Microsoft.Maps.Point(0, 15)
                     });
 
@@ -117,11 +118,9 @@ define(['underscore', 'location', 'async!http://ecn.dev.virtualearth.net/mapcont
         }
 
         function createSearchManager() {
-            if (!this.searchManager) {
-                this.map.addComponent('searchManager', new Microsoft.Maps.Search.SearchManager(this.map));
-                this.searchManager = this.map.getComponent('searchManager');
-                this.$Initdeferred.resolve();
-            }
+            this.map.addComponent('searchManager', new Microsoft.Maps.Search.SearchManager(this.map));
+            this.searchManager = this.map.getComponent('searchManager');
+            this.$Initdeferred.resolve();
         }
 
 

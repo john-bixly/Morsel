@@ -14,9 +14,9 @@ define(['baseView', 'searchView/options', 'mapHelper', 'listingHelper', 'jquery'
 
         function afterRender() {
             mapHelper.initializeMapObjects('map-canvas', {})
-                .done(_setupListeners.bind(this))
-                .done(_getListings.bind(this))
-                .done(_getUserLocation.bind(this));
+                .then(_setupListeners.bind(this), throwError.bind(this))
+                .then(_getListings.bind(this), throwError.bind(this))
+                .then(_getUserLocation.bind(this), throwError.bind(this));
         }
 
         function _setupListeners() {
@@ -25,12 +25,13 @@ define(['baseView', 'searchView/options', 'mapHelper', 'listingHelper', 'jquery'
 
         function _getListings() {
             listingHelper.getAllListings()
-                .done(_processListings.bind(this));
+                .done(_processListings.bind(this))
+                .fail(throwError.bind(this));
         }
 
         function _getUserLocation() {
-            mapHelper.getUserLocation()
-                .done(mapHelper.addUserLocation.bind(mapHelper));
+            mapHelper.getUserLocation();
+                //.done(mapHelper.addUserLocation.bind(mapHelper));
         }
 
         function _processListings(listings) {
@@ -83,6 +84,10 @@ define(['baseView', 'searchView/options', 'mapHelper', 'listingHelper', 'jquery'
         function remove() {
             $(window).off('resize orientationChanged', _resizeMap.bind(this));
             baseView.prototype.remove.apply(this, arguments);
+        }
+
+        function throwError(err) {
+            console.log(err);
         }
 
     });
