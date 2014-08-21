@@ -1,9 +1,9 @@
-define(['underscore', 'location', 'async!http://ecn.dev.virtualearth.net/mapcontrol/mapcontrol.ashx?v=7.0!onscriptload'],
-    function (_, location) {
+define(['underscore', 'location', 'constants','async!http://ecn.dev.virtualearth.net/mapcontrol/mapcontrol.ashx?v=7.0!onscriptload'],
+    function (_, location, constants) {
         'use strict';
         return {
             defaultOptions: {
-                credentials: 'AtQNTms4bvR983SS3_sgRwSW5HABq5Z6YwWIHWiKltP1dtav9e4WoxQC-2qNnEmj',
+                credentials: constants.bingApiKey,
                 mapTypeId: Microsoft.Maps.MapTypeId.road,
                 showDashboard: true,
                 zoom: 11,
@@ -29,9 +29,9 @@ define(['underscore', 'location', 'async!http://ecn.dev.virtualearth.net/mapcont
         };
 
         function initializeMapObjects(div, options) {
-            this.$Initdeferred = new $.Deferred();
+            this.$initDeferred = new $.Deferred();
             Microsoft.Maps.loadModule('Microsoft.Maps.Themes.BingTheme', { callback: createMap.bind(this, div, options) });
-            return this.$Initdeferred.promise();
+            return this.$initDeferred.promise();
         }
 
         function createMap(div, options) {
@@ -120,7 +120,7 @@ define(['underscore', 'location', 'async!http://ecn.dev.virtualearth.net/mapcont
         function createSearchManager() {
             this.map.addComponent('searchManager', new Microsoft.Maps.Search.SearchManager(this.map));
             this.searchManager = this.map.getComponent('searchManager');
-            this.$Initdeferred.resolve();
+            this.$initDeferred.resolve();
         }
 
 

@@ -17,7 +17,8 @@ define({
     },
     assets : {
         assetBase : 'https://s3-us-west-1.amazonaws.com/morselapp/'
-    }
+    },
+    bingApiKey : 'At3aMJOBaA-KY8yiTNsWGYjAotk8KvAjqY6FmNgonCC0GwQwip2xpoHx7R6CETIh'
 
 
 });

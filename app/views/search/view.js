@@ -24,13 +24,13 @@ define(['baseView', 'searchView/options', 'mapHelper', 'listingHelper', 'jquery'
         }
 
         function _getListings() {
-            listingHelper.getAllListings()
+            return listingHelper.getAllListings()
                 .done(_processListings.bind(this))
                 .fail(throwError.bind(this));
         }
 
         function _getUserLocation() {
-            mapHelper.getUserLocation();
+            return mapHelper.getUserLocation();
                 //.done(mapHelper.addUserLocation.bind(mapHelper));
         }
 
