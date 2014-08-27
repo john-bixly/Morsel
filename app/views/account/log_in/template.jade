@@ -1,6 +1,6 @@
 .row
     .small-12.medium-6.large-6.small-centered.medium-centered.large-centered.columns
-        h1 Log In
+        h1(data-rv-text="model:lang->login")
         form
             .row
                 .small-12.columns
@@ -10,8 +10,8 @@
                     input(type='password', placeholder='Password', data-rv-value="model:password")
             .row
                 .small-12.columns
-                    a.button(href="#", data-rv-on-click="view.logIn") Log In
-                    span.or-register Or
-                    a(href="/register") Register
+                    a.button(href="#", data-rv-on-click="view.logIn", data-rv-text="model:lang->login")
+                    span.or-register(data-rv-text="model:lang->or")
+                    a(href="/register", data-rv-text="model:lang->register")
 
 

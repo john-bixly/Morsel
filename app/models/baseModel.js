@@ -1,12 +1,15 @@
 define([
-        'masseuse', 'backbone', 'memoryHelper', 'lang'
+        'masseuse', 'backbone', 'memoryHelper', 'lang', 'constants'
     ],
-    function(masseuse, Backbone, memoryHelper, lang) {
+    function(masseuse, Backbone, memoryHelper, lang, constants) {
         'use strict';
 
         return masseuse.MasseuseModel.extend({
             sync: sync,
-            lang : lang
+            defaults : {
+                lang : lang,
+                constants : constants
+            }
         });
 
         function sync(method, model, options) {
