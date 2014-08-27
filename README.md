@@ -23,19 +23,20 @@ bower install && npm install && bundle install
 grunt server
 ```
 
-Select local, and browser
+Select `local`, and `browser`
 
 #### For an android build
+
+You will need to have [cordova](http://cordova.apache.org/docs/en/3.5.0/guide_platforms_android_index.md.html#Android%20Platform%20Guide) set up in order to run this command. 
+(plug your android device in before, and have debugging mode turned on)
 
 ```shell
 grunt android
 ```
 
-(plug your android device in before)
-
 #### app/dependencies
 
-Here we will differentiate between browser and mobile, it chooses the correct one depending on your build.
+Here we will differentiate between browser and mobile, it chooses the correct one depending on your build. 
 
 
 

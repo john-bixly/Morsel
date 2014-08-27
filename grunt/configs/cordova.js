@@ -7,8 +7,8 @@ module.exports = function (grunt) {
                 platforms: ['android'],
                 plugins: ['device', 'dialogs', 'geolocation'],
                 path: 'mobileBuild',
-                id: 'io.moorsl.moorsl',
-                name: 'Moorsl'
+                id: 'io.morsel.morsel',
+                name: 'Morsel'
             }
         },
         build: {
@@ -17,8 +17,8 @@ module.exports = function (grunt) {
                 platforms: ['android'],
                 plugins: ['device', 'dialogs', 'geolocation'],
                 path: 'mobileBuild',
-                id: 'io.moorsl.moorsl',
-                name: 'Moorsl'
+                id: 'io.morsel.morsel',
+                name: 'Morsel'
             }
         },
         run: {
@@ -27,8 +27,8 @@ module.exports = function (grunt) {
                 platforms: ['android'],
                 plugins: ['device', 'dialogs','geolocation'],
                 path: 'mobileBuild',
-                id: 'io.moorsl.moorsl',
-                name: 'Moorsl'
+                id: 'io.morsel.morsel',
+                name: 'Morsel'
             }
         }
     });
