@@ -30,6 +30,7 @@
     "config" : {
         "constants":"config/constants"
     },
+   
     "lang" : {
         "lang" : "lang/resources"
     },
